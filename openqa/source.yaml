@@ -1,0 +1,392 @@
+---
+title: openQA - How to Test a Testing Software?
+content: |
+  [title][/title]
+  [list]
+  [*]Where: FOSDEM, Brussels
+  [*]When: February 3 2024
+  [*]Who: Tina Müller
+  [/list]
+
+---
+title: About me
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Addicted to Perl since 1998
+  [*]Engineer at SUSE Software Solutions [img=suse_logo_small.png]SUSE[/img] since 2019
+  [/list]
+
+
+---
+title: OpenQA
+content: |
+  [title][/title]
+  [list]
+  [*]openQA is an automated test tool for operating systems
+  [*][url=https://openqa.opensuse.org/]OpenQA Website for openSUSE[/url]
+  [*][url=https://openqa.fedoraproject.org/]OpenQA for Fedora[/url]
+  [*][url=https://openqa.debian.net/]OpenQA for Debian[/url]
+  [/list]
+
+---
+title: Topics
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Demonstrate WebUI by having a closer look at a finished test of openSUSE Tumbleweed
+  [*]Show relevant testapi functions
+  [*]Project structure
+  [*]Deployment
+  [*]Development and Testing
+  [/list]
+
+---
+title: Demo - View Test in OpenQA WebUI
+content: |
+  [title][/title]
+
+---
+title: Demo - Tumbleweed Group
+content: |
+  [title][/title]
+    [img=tumbleweed/overview.png]Screenshot[/img]
+
+---
+title: Demo - Tumbleweed Test Overview
+content: |
+  [title][/title]
+    [img=tumbleweed/tests-overview.png]Screenshot[/img]
+
+---
+title: Demo - Test
+content: |
+  [title][/title]
+    [img=tumbleweed/test.png]Screenshot[/img]
+
+---
+title: Demo - Logs and Assets
+content: |
+  [title][/title]
+    [img=tumbleweed/logs-assets.png]Screenshot[/img]
+
+---
+title: Demo - Needle view
+content: |
+  [title][/title]
+    [img=tumbleweed/needle-worldmap.png]Screenshot[/img]
+
+---
+title: Demo - Needle view bar
+content: |
+  [title][/title]
+    [img=tumbleweed/needle-worldmap-bar.png]Screenshot[/img]
+
+---
+title: Demo - Needle Bootmenu
+content: |
+  [title][/title]
+    [img=tumbleweed/needle-bootmenu.png]Screenshot[/img]
+
+---
+title: Demo - Needle Editor
+content: |
+  [title][/title]
+    [img=tumbleweed/needle-editor-bootmenu.png]Screenshot[/img]
+
+---
+title: Demo - Needle Editor - Select area
+content: |
+  [title][/title]
+    [img=tumbleweed/needle-editor-bootmenu-area.png]Screenshot[/img]
+
+---
+title: Demo - Needle Editor - Review JSON
+content: |
+  [title][/title]
+    [img=tumbleweed/needle-editor-review.png]Screenshot[/img]
+
+---
+title: Demo - Needle Desktop Runner
+content: |
+  [title][/title]
+    [img=tumbleweed/needle-desktop-runner.png]Screenshot[/img]
+
+---
+title: Demo - Needle User Setup
+content: |
+  [title][/title]
+    [img=tumbleweed/inst-usersetup.png]Screenshot[/img]
+
+---
+title: Demo - Code View
+content: |
+  [title][/title]
+    [img=tumbleweed/assert-screen.png]Screenshot[/img]
+
+---
+title: Demo - Needle Console
+content: |
+  [title][/title]
+    [img=tumbleweed/needle-console.png]Screenshot[/img]
+
+---
+title: Demo - Code View
+content: |
+  [title][/title]
+    [img=tumbleweed/assert-script-run.png]Screenshot[/img]
+
+---
+title: Demo - Job Group Config
+content: |
+  [title][/title]
+    [img=tumbleweed/jobgroup-config.png]Screenshot[/img]
+
+---
+title: Demo - Job Group Config
+content: |
+  [title][/title]
+    [img=tumbleweed/jobgroup-config2.png]Screenshot[/img]
+
+---
+title: os-autoinst testapi
+content: |
+  [title][/title]
+  A selection of available functions:
+  [codebox]
+  # typing
+  send_key send_key_until_needlematch type_string type_password enter_cmd
+  hold_key release_key
+
+  # screenshot (needle) matching
+  assert_screen check_screen assert_and_click assert_and_dclick
+  wait_still_screen assert_still_screen
+  wait_screen_change assert_screen_change
+
+  # mouse operations
+  mouse_hide mouse_set mouse_drag
+  mouse_click mouse_dclick mouse_tclick
+
+  # Running scripts
+  assert_script_run script_run background_script_run
+  assert_script_sudo script_sudo script_output validate_script_output
+
+  # audio
+  start_audiocapture assert_recorded_sound check_recorded_sound
+  [/codebox]
+
+
+---
+title: openQA Project
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]The project is mainly split in two parts:
+  [*][url=https://github.com/os-autoinst/os-autoinst]os-autoinst[/url] - Code
+  for running the test
+  [*][url=https://github.com/os-autoinst/openQA]openQA[/url] - WebUI, Manage everything
+  around tests, e.g.:
+  [*]View running and finished tests
+  [*]Configure Job Groups
+  [*]Configure Workers
+  [*]Schedule Tests
+  [*]Manage Assets
+  [*]API, Websocket
+  [*]and more
+  [/list]
+
+---
+title: openQA Project History
+content: |
+  [title][/title]
+  [codebox animation=1,appear]cd os-autoinst
+  git lg | tail -1
+  a89189be 2009-11-19 initial checkin [Bernhard M. Wiedemann]
+  cd ../openQA
+  git lg | tail -1
+  * 6d5a532fe 2010-10-24 initial checkin of test files [Bernhard M. Wiedemann]
+  [/codebox]
+
+---
+title: openQA Code
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Mojolicious
+  [*]DBIx::Class
+  [*]Perl Signatures
+  [*]Test::Warnings
+  [*]Test::MockModule
+  [*]Test::MockObject
+  [*]Test::Mock::Time
+  [*]perlcritic
+  [*]perltidy
+  [*]Devel::Cover
+  [*]Apart from perl, we also have a lot of Javascript, Python and Shell Code
+  [/list]
+
+
+---
+title: os-autoinst
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]The code in osautoinst is responsible for running the actual test
+  [*]The main script is isotovideo
+  [*]When developing a test, you can run it directly
+  [*]You can start vncviewer to attach to the running test and watch it or
+  even type and click
+  [/list]
+
+---
+title: openQA Deployment
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Deployment is fully automated
+  [*]With every commit on the main branch a new build in OBS will be triggered
+  [*]On openqa.opensuse.org a zypper update is done regularly
+  [*]Necessary service restarts happen
+  [*]Database changes will be done automatically thanks to the DBIx::Class
+  deployment feature
+  [/list]
+
+---
+title: openQA Deployment - OpenSUSE Build Service
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]OBS can build rpm (and other) packages
+  [*]It can be triggered to fetch new code from git via webhooks
+  [*]It is used for all openSUSE packages
+  [/list]
+
+---
+title: OBS - devel:openQA
+content: |
+  [title][/title]
+  [url=https://build.opensuse.org/project/show/devel:openQA]devel:openQA[/url][br]
+  [img=obs-devel-openqa.png]Screenshot[/img]
+
+---
+title: Testing openQA
+content: |
+  [title][/title]
+  [url=https://github.com/os-autoinst/openQA]openQA[/url][br][br]
+  [img=openqa-git.png]Screenshot[/img][br][br]
+  [url=https://github.com/os-autoinst/os-autoinst]os-autoinst[/url][br][br]
+  [img=os-autoinst-git.png]Screenshot[/img]
+
+---
+title: openQA Code Coverage
+content: |
+  [title][/title]
+  [h2]How did we achive such a high test coverage?[/h2]
+  [h2 animation=1,appear]We cheated![/h2]
+  [h2 animation=2,appear];-)[/h2]
+  [h2 animation=3,appear]Well, we do cheat at least a little bit...[/h2]
+
+---
+title: openQA Code Coverage
+content: |
+  [title][/title]
+  [codebox]% cd openQA
+  % ack "# uncoverable statement" | wc -l
+  243
+  % ack "# uncoverable statement" t | wc -l
+  185
+  % ack "# uncoverable statement" lib script | wc -l
+  58
+  [/codebox][br]
+  According to codecov we have currently 37,744 lines of perl code in openQA.[br]
+
+---
+title: openQA Code Coverage - Trend openQA
+content: |
+  [title][/title]
+  [img=codecov-trend-openqa.png]Screenshot[/img][br]
+  [url=https://app.codecov.io/gh/os-autoinst/openQA/]codecov.io / openQA[/url][br]
+
+---
+title: openQA Code Coverage - Trend os-autoinst
+content: |
+  [title][/title]
+  [img=codecov-trend-os-autoinst.png]Screenshot[/img][br]
+  [url=https://app.codecov.io/gh/os-autoinst/os-autoinst/]codecov.io / os-autoinst[/url]
+
+---
+title: Testing openQA
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]General tests under t/*.t
+  [*]API tests under t/api
+  [*]UI tests under t/ui
+  [*]For UI we are using Selenium
+  [*]The tests themselves are included in coverage
+  [*]We are using Codecov to report Test Coverage
+  [*]But we also use openQA to test openQA :)
+  [/list]
+
+---
+title: Testing openQA
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Some of our tests are forking
+  [*]They should probably be turned into real unit tests
+  [*]But still Devel::Cover is able to track coverage with this:
+  [/list]
+  [codebox animation="10,greyin"]# at the end of the forked process
+  Devel::Cover::report() if Devel::Cover->can('report');
+  [/codebox]
+
+---
+title: Testing openQA
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Codecov will complain if a PR adds uncovered code
+  [*]It will also complain if the percentage goes below a threshold
+  [*]Some directories are marked as fully covered, so it will complain
+  if one of the files has uncovered lines
+  [*]We use GitHub's [url=https://github.com/os-autoinst/openQA/blob/master/.mergify.yml]mergify[/url] bot
+  [*]Two approvals and no failing test will automatically merge the PR
+  [/list]
+
+---
+title: Testing openQA
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Checking code coverage might not be enough
+  [*]PR authors are encouraged to add new tests for every PR, if necessary
+  [*]Writing tests is seen as part of every ticket we work on
+  [*]Also refactoring is encouraged
+  [*]For every regression, we encourage people to think what we could do
+  to prevent similar things in the future
+  [/list]
+
+---
+title: Testing openQA in openQA
+content: |
+  [title][/title]
+  [img=openqa-in-openqa-needle.png]Screenshot[/img]
+
+---
+title: Links
+content: |
+  [title][/title]
+  [list]
+  [*][url=https://matrix.to/#/#openqa:opensuse.org]OpenQA Channel on Matrix[/url]
+  [*][url=https://open.qa/]OpenQA Documentation[/url]
+  [*][url=https://openqa.opensuse.org/]OpenQA Website for openSUSE[/url]
+  [/list]
+
+---
+title: Thanks
+content: |
+  [size=80][br]Thanks![br]
+  [color=green]🙂[/color][/size]
+
+

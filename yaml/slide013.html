@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-store" />
+<title>Ansible</title>
+<link rel="prev" href="slide012.html" />
+<link rel="next" href="slide014.html" />
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bbslides.js"></script>
+<script src="js/navi.js"></script>
+<link rel="stylesheet" type="text/css" href="css/slides.css">
+<link rel="stylesheet" type="text/css" href="css/ansicolor.css">
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
+</head>
+
+<body>
+<!--
+<div id="test"></div>
+-->
+<div id="bbslides-slide" class="bbslides-frame">
+<h1 id="node_1" class="bbslides-h1">Ansible</h1>
+<div id="node_2" class="codebox"><span class="dash">-</span><span class="default"> </span><span class="plainkey">name</span><span class="colon">:</span><span class="eol"> # Touch files with an optional mode
+</span><span class="default">  </span><span class="plainkey">ansible.builtin.file</span><span class="colon">:</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">dest</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">{{ item.path }}</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">state</span><span class="colon">:</span><span class="default"> </span><span class="default">touch</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">mode</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">{{ item.mode | default(omit) }}</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="plainkey">loop</span><span class="colon">:</span><span class="eol">
+</span><span class="default">  </span><span class="dash">-</span><span class="default"> </span><span class="plainkey">path</span><span class="colon">:</span><span class="default"> </span><span class="default">/tmp/foo</span><span class="eol">
+</span><span class="default">  </span><span class="dash">-</span><span class="default"> </span><span class="plainkey">path</span><span class="colon">:</span><span class="default"> </span><span class="default">/tmp/bar</span><span class="eol">
+</span><span class="default">  </span><span class="dash">-</span><span class="default"> </span><span class="plainkey">path</span><span class="colon">:</span><span class="default"> </span><span class="default">/tmp/baz</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">mode</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">0444</span><span class="doublequote">&quot;</span><span class="eol">
+</span></div>
+<ul><li id="node_5">It also uses Jinja templates</li><li id="node_6">They are processed <i>after</i> loading the YAML</li><li id="node_8">Many people think {{ ... }} is a part of YAML</li><li id="node_9">Intro on their
+<a href="https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html" rel="nofollow">website</a>:
+&quot;This page provides a basic overview of correct YAML syntax, which is how
+Ansible playbooks (our configuration management language) are expressed.&quot;</li></ul>
+</div>
+<script type="text/javascript">
+register_animation('node_5', 2, 'greyin', {});
+register_animation('node_6', 3, 'greyin', {});
+register_animation('node_8', 4, 'greyin', {});
+register_animation('node_9', 5, 'greyin', {});
+
+var prev_page = 'slide012.html';
+var next_page = 'slide014.html';
+</script>
+<div id="bbslides-navi">
+Slide 13/33
+<a href="slide012.html" onclick="previous_step();return false">BACK</a>
+<a href="index.html">UP</a>
+<a href="slide014.html" onclick="next_step(); return false">NEXT</a>
+<span id="usage">next: ( space / -&gt; / page up ) | previous: ( backspace / &lt;- / page down ) |
+next page: ( shift + page down ) | previous page: ( shift + page up ) |
+index: ( arrow-up )</span>
+
+<br>
+<progress id="slide-progress" value="13" max="33"></progress>
+</div>
+</body>
+</html>
