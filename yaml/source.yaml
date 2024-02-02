@@ -312,7 +312,7 @@ content: |
   [list animation="1,greyin"]
   [*]The [url=https://github.com/yaml/yaml-test-suite]YAML Test Suite[/url] was
   started by Ingy in 2016
-  [*]Felix "flyx" Krause added a lot of test cases when he im implemented NimYAML
+  [*]Felix "flyx" Krause added a lot of test cases when he implemented NimYAML
   [*]In 2017 I started YAML::PP (perl) and also added a lot of test cases
   [*]12 libraries are in the list of official users
   [/list]
