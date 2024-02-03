@@ -315,6 +315,7 @@ content: |
   [*]Felix "flyx" Krause added a lot of test cases when he implemented NimYAML
   [*]In 2017 I started YAML::PP (perl) and also added a lot of test cases
   [*]12 libraries are in the list of official users
+  [*]402 test cases
   [/list]
 
 ---
@@ -324,7 +325,18 @@ content: |
   [list animation="1,greyin"]
   [*]In 2017, Ingy started the YAML Editor
   [*]A tool to play with various YAML libraries and see their output
+  [*]A new alterntive to that is the [url=https://play.yaml.io/main/parser]YAML Playground[/url]
+  [*]It makes it easier to share YAML snippets
+  [*]It requires to run a local docker/podman container
   [/list]
+
+---
+title: YAML Playground
+content: |
+  [title][/title]
+  [url=https://play.yaml.io/main/parser?input=IyBFZGl0IE1lIQotLS0KSGVsbG86IEZPU0RFTSE=]YAML
+  Playground[/url][br]
+  [img=yaml-playground.png]YAML Playground[/img]
 
 ---
 title: YAML Test Matrix
@@ -340,6 +352,7 @@ content: |
 title: YAML Test Matrix
 content: |
   [title][/title]
+  [url=https://matrix.yaml.info/]YAML Test Matrix[/url][br]
   [img=yaml-matrix.png]YAML Test Matrix[/img]
 
 
