@@ -274,6 +274,7 @@ content: |
 title: yamltidy
 content: |
   [title][/title]
+  I started [url=https://perlpunk.github.io/yamltidy/]yamltidy[/url] four years ago[br]
   [codebox][include="yamltidy.yaml.html"][/codebox]
   [div]
   [codebox animation="1,appear"][include="useless-quotes.yaml.html"][/codebox]
@@ -319,12 +320,59 @@ content: |
   [/list]
 
 ---
+title: New libraries
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]And the test suite was already helping to get more 1.2 libraries
+  [*]Specifically I'd like to mention the following:
+  [/list]
+
+---
+title: libfyaml
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*][url=https://github.com/pantoniou/libfyaml]C libfyaml[/url] by Pantelis "panto" Antoniou
+  [*]It can replace libyaml
+  [*]It passes all tests
+  [*]It's fast
+  [*]It's actively developed
+  [*]It can roundtrip YAML comments (but experimental I think)
+  [*]Bindings to several languages are planned
+  [/list]
+
+---
+title: Javascript yaml
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*][url=https://github.com/eemeli/yaml]Javascript yaml[/url] by Eemeli Aro
+  [*]It passes all tests (I think)
+  [*]It's actively developed
+  [*]It can roundtrip YAML with comments and blank lines
+  [*]It supports the YAML 1.2 Core schema, 1.1 and optional things like the << merge key
+  [/list]
+
+---
+title: Perl YAML::PP
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*][url=https://github.com/perlpunk/YAML-PP-p5]Perl YAML::PP[/url] by me ;-)
+  [*]It passes most of the tests with the exception of implicit mapping keys
+  that are not strings
+  [*]It supports the YAML 1.2 Core schema, 1.1 and optional things like the << merge key
+  [*]Comes with a script to output YAML with ANSI colors
+  [/list]
+
+---
 title: YAML Containers
 content: |
   [title][/title]
   [list animation="1,greyin"]
   [*]In 2017, Ingy started the YAML Editor
-  [*]A tool to play with various YAML libraries and see their output
+  [*]A tool to play with various YAML libraries in a container and see their output
   [*]A new alterntive to that is the [url=https://play.yaml.io/main/parser]YAML Playground[/url]
   [*]It makes it easier to share YAML snippets
   [*]It requires to run a local docker/podman container
@@ -355,6 +403,15 @@ content: |
   [url=https://matrix.yaml.info/]YAML Test Matrix[/url][br]
   [img=yaml-matrix.png]YAML Test Matrix[/img]
 
+---
+title: YAML as a programming language
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]If you think YAML should just be a simple configuration language just don't
+  pay attention to the next few slides ;-)
+  [*]Ingy created a new programming language
+  [/list]
 
 ---
 title: YAMLScript
@@ -379,6 +436,29 @@ content: |
   [/div]
   [codebox animation="3,appear"][include="ys-example.ys.html"][/codebox]
   [codebox animation="4,appear"][include="ys-output.txt.html"][/codebox]
+
+---
+title: YAMLScript
+content: |
+  [title][/title]
+  The current way to quickly try it out:[br]
+  [codebox]docker run --rm -it ubuntu bash -c 'apt update \
+  && apt install -y curl make xz-utils \
+  && . <(curl -sL yamlscript.org/try-ys) && bash -i'
+  [/codebox]
+
+---
+title: Where to find us
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*][url=https://yaml.org/]yaml.org[/url]
+  [*]On matrix: [url=https://matrix.to/#/#chat:yaml.io][/url] (note that there
+  is a server move planned in the near future so there might be a downtime
+  [*]On IRC: [url=https://web.libera.chat/?channels#yaml]libera.chat#yaml[/url]
+  [/list]
+
+
 
 ---
 title: Thanks

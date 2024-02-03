@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-store" />
+<title>YAMLScript</title>
+<link rel="prev" href="slide037.html" />
+<link rel="next" href="slide039.html" />
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bbslides.js"></script>
+<script src="js/navi.js"></script>
+<link rel="stylesheet" type="text/css" href="css/slides.css">
+<link rel="stylesheet" type="text/css" href="css/ansicolor.css">
+<link rel="stylesheet" type="text/css" href="css/yaml.css">
+</head>
+
+<body>
+<!--
+<div id="test"></div>
+-->
+<div id="bbslides-slide" class="bbslides-frame">
+<h1 id="node_1" class="bbslides-h1">YAMLScript</h1>
+<div id="node_2">
+<div id="node_3" class="codebox"><span class="dash">-</span><span class="default"> </span><span class="plainkey">person</span><span class="colon">:</span><span class="default"> </span><span class="default">Ingy</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="plainkey">person</span><span class="colon">:</span><span class="default"> </span><span class="default">Tina</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="plainkey">person</span><span class="colon">:</span><span class="default"> </span><span class="default">Panto</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="plainkey">person</span><span class="colon">:</span><span class="default"> </span><span class="default">Eemeli</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="plainkey">person</span><span class="colon">:</span><span class="default"> </span><span class="default">Thom</span><span class="eol">
+</span></div>
+<div id="node_5" class="codebox"><span class="dash">-</span><span class="default"> </span><span class="plainkey">place</span><span class="colon">:</span><span class="default"> </span><span class="default">Seattle</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="plainkey">place</span><span class="colon">:</span><span class="default"> </span><span class="default">Berlin</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="plainkey">place</span><span class="colon">:</span><span class="default"> </span><span class="default">Athens</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="plainkey">place</span><span class="colon">:</span><span class="default"> </span><span class="default">Helsinki</span><span class="eol">
+</span><span class="dash">-</span><span class="default"> </span><span class="plainkey">place</span><span class="colon">:</span><span class="default"> </span><span class="default">Buffalo</span><span class="eol">
+</span></div>
+</div>
+<div id="node_7" class="codebox"><span class="tag">!yamlscript/v0</span><span class="eol">
+</span><span class="plainkey">people =</span><span class="colon">:</span><span class="default"> </span><span class="default">load(&quot;people.yaml&quot;)</span><span class="eol">
+</span><span class="plainkey">places =</span><span class="colon">:</span><span class="default"> </span><span class="default">load(&quot;places.yaml&quot;)</span><span class="eol">
+</span><span class="eol">
+</span><span class="plainkey">defn other(n):</span><span class="colon">:</span><span class="eol">
+</span><span class="default">  </span><span class="plainkey">number:</span><span class="colon">:</span><span class="default"> </span><span class="default">int(rand(n)) + 1</span><span class="eol">
+</span><span class="default">  </span><span class="plainkey">some</span><span class="colon">:</span><span class="default"> </span><span class="default">String Value</span><span class="eol">
+</span><span class="eol">
+</span><span class="plainkey">take (ARGV.0 || 5)</span><span class="colon">:</span><span class="eol">
+</span><span class="default">  </span><span class="plainkey">shuffle</span><span class="colon">:</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">for [person people, place places]</span><span class="colon">:</span><span class="eol">
+</span><span class="default">      </span><span class="plainkey">merge</span><span class="colon">:</span><span class="eol">
+</span><span class="default">        </span><span class="default">person</span><span class="eol">
+</span><span class="indent">        </span><span class="default">place</span><span class="eol">
+</span><span class="indent">        </span><span class="default">other(10)</span><span class="eol">
+</span></div>
+<div id="node_9" class="codebox"><span class="eol"># ys --load data.ys 2 | jq
+</span><span class="flowseq_start">[</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">person</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">Panto</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">place</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">Helsinki</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">number</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">6</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">some</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">String Value</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_end">}</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_start">{</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">person</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">Ingy</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">place</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">Berlin</span><span class="doublequote">&quot;</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">number</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="default">9</span><span class="flow_comma">,</span><span class="eol">
+</span><span class="default">    </span><span class="doublequote">&quot;</span><span class="doublequoted">some</span><span class="doublequote">&quot;</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">String Value</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="flowmap_end">}</span><span class="eol">
+</span><span class="flowseq_end">]</span><span class="eol">
+</span></div>
+</div>
+<script type="text/javascript">
+register_animation('node_3', 1, 'appear', {});
+register_animation('node_5', 2, 'appear', {});
+register_animation('node_7', 3, 'appear', {});
+register_animation('node_9', 4, 'appear', {});
+
+var prev_page = 'slide037.html';
+var next_page = 'slide039.html';
+</script>
+<div id="bbslides-navi">
+Slide 38/41
+<a href="slide037.html" onclick="previous_step();return false">BACK</a>
+<a href="index.html">UP</a>
+<a href="slide039.html" onclick="next_step(); return false">NEXT</a>
+<span id="usage">next: ( space / -&gt; / page up ) | previous: ( backspace / &lt;- / page down ) |
+next page: ( shift + page down ) | previous page: ( shift + page up ) |
+index: ( arrow-up )</span>
+
+<br>
+<progress id="slide-progress" value="38" max="41"></progress>
+</div>
+</body>
+</html>
