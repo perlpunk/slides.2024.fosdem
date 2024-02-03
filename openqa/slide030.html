@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-store" />
-<title>OBS - devel:openQA</title>
+<title>openQA Deployment</title>
 <link rel="prev" href="slide029.html" />
 <link rel="next" href="slide031.html" />
 <script src="js/jquery-3.1.1.min.js"></script>
@@ -18,17 +18,22 @@
 <div id="test"></div>
 -->
 <div id="bbslides-slide" class="bbslides-frame">
-<h1 id="node_1" class="bbslides-h1">OBS - devel:openQA</h1>
-<a href="https://build.opensuse.org/project/show/devel:openQA" rel="nofollow">devel:openQA</a><br>
-<img src="data/obs-devel-openqa.png" alt="[Screenshot]" title="Screenshot">
+<h1 id="node_1" class="bbslides-h1">openQA Deployment</h1>
+<ul><li id="node_3">Deployment is fully automated</li><li id="node_4">With every commit on the main branch a new build in OBS will be triggered</li><li id="node_5">On openqa.opensuse.org a zypper update is done regularly</li><li id="node_6">Necessary service restarts happen</li><li id="node_7">Database changes will be done automatically thanks to the DBIx::Class
+deployment feature</li></ul>
 </div>
 <script type="text/javascript">
+register_animation('node_3', 2, 'greyin', {});
+register_animation('node_4', 3, 'greyin', {});
+register_animation('node_5', 4, 'greyin', {});
+register_animation('node_6', 5, 'greyin', {});
+register_animation('node_7', 6, 'greyin', {});
 
 var prev_page = 'slide029.html';
 var next_page = 'slide031.html';
 </script>
 <div id="bbslides-navi">
-Slide 30/42
+Slide 30/44
 <a href="slide029.html" onclick="previous_step();return false">BACK</a>
 <a href="index.html">UP</a>
 <a href="slide031.html" onclick="next_step(); return false">NEXT</a>
@@ -37,7 +42,7 @@ next page: ( shift + page down ) | previous page: ( shift + page up ) |
 index: ( arrow-up )</span>
 
 <br>
-<progress id="slide-progress" value="30" max="42"></progress>
+<progress id="slide-progress" value="30" max="44"></progress>
 </div>
 </body>
 </html>

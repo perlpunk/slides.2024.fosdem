@@ -175,6 +175,36 @@ content: |
   start_audiocapture assert_recorded_sound check_recorded_sound
   [/codebox]
 
+---
+title: os-autoinst Python API
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]You can even write test modules in Python!
+  [*]We are using Inline::Python for that
+  [/list]
+
+
+---
+title: os-autoinst Python API
+content: |
+  [title][/title]
+  [url=http://open.qa/docs/#_notes_on_the_python_api]Python API[/url][br]
+  [codebox]import sys
+
+  from testapi import *
+
+  def run(self):
+      send_key("esc")
+      set_var("HELP", "I am a python script trapped in a perl script!")
+
+      if not check_screen("should_not_match", 0):
+          return
+      raise Exception("Should not reach here")
+
+  def test_flags(self):
+      return dict([("fatal", 1)])
+  [/codebox]
 
 ---
 title: openQA Project

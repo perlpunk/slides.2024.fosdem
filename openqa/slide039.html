@@ -19,21 +19,22 @@
 -->
 <div id="bbslides-slide" class="bbslides-frame">
 <h1 id="node_1" class="bbslides-h1">Testing openQA</h1>
-<ul><li id="node_3">Checking code coverage might not be enough</li><li id="node_4">PR authors are encouraged to add new tests for every PR, if necessary</li><li id="node_5">Writing tests is seen as part of every ticket we work on</li><li id="node_6">Also refactoring is encouraged</li><li id="node_7">For every regression, we encourage people to think what we could do
-to prevent similar things in the future</li></ul>
+<ul><li id="node_3">Some of our tests are forking</li><li id="node_4">They should probably be turned into real unit tests</li><li id="node_5">But still Devel::Cover is able to track coverage with this:</li></ul>
+<div id="node_6" class="codebox"># at the end of the forked process
+Devel::Cover::report() if Devel::Cover-&gt;can(&#39;report&#39;);
+</div>
 </div>
 <script type="text/javascript">
 register_animation('node_3', 2, 'greyin', {});
 register_animation('node_4', 3, 'greyin', {});
 register_animation('node_5', 4, 'greyin', {});
-register_animation('node_6', 5, 'greyin', {});
-register_animation('node_7', 6, 'greyin', {});
+register_animation('node_6', 10, 'greyin', {});
 
 var prev_page = 'slide038.html';
 var next_page = 'slide040.html';
 </script>
 <div id="bbslides-navi">
-Slide 39/42
+Slide 39/44
 <a href="slide038.html" onclick="previous_step();return false">BACK</a>
 <a href="index.html">UP</a>
 <a href="slide040.html" onclick="next_step(); return false">NEXT</a>
@@ -42,7 +43,7 @@ next page: ( shift + page down ) | previous page: ( shift + page up ) |
 index: ( arrow-up )</span>
 
 <br>
-<progress id="slide-progress" value="39" max="42"></progress>
+<progress id="slide-progress" value="39" max="44"></progress>
 </div>
 </body>
 </html>

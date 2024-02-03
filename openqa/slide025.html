@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-store" />
-<title>openQA Project History</title>
+<title>os-autoinst Python API</title>
 <link rel="prev" href="slide024.html" />
 <link rel="next" href="slide026.html" />
 <script src="js/jquery-3.1.1.min.js"></script>
@@ -18,23 +18,31 @@
 <div id="test"></div>
 -->
 <div id="bbslides-slide" class="bbslides-frame">
-<h1 id="node_1" class="bbslides-h1">openQA Project History</h1>
-<div id="node_2" class="codebox">cd os-autoinst
-git lg | tail -1
-a89189be 2009-11-19 initial checkin [Bernhard M. Wiedemann]
-cd ../openQA
-git lg | tail -1
-* 6d5a532fe 2010-10-24 initial checkin of test files [Bernhard M. Wiedemann]
+<h1 id="node_1" class="bbslides-h1">os-autoinst Python API</h1>
+<a href="http://open.qa/docs/#_notes_on_the_python_api" rel="nofollow">Python API</a><br>
+<div id="node_4" class="codebox">import sys
+
+from testapi import *
+
+def run(self):
+    send_key(&quot;esc&quot;)
+    set_var(&quot;HELP&quot;, &quot;I am a python script trapped in a perl script!&quot;)
+
+    if not check_screen(&quot;should_not_match&quot;, 0):
+        return
+    raise Exception(&quot;Should not reach here&quot;)
+
+def test_flags(self):
+    return dict([(&quot;fatal&quot;, 1)])
 </div>
 </div>
 <script type="text/javascript">
-register_animation('node_2', 1, 'appear', {});
 
 var prev_page = 'slide024.html';
 var next_page = 'slide026.html';
 </script>
 <div id="bbslides-navi">
-Slide 25/42
+Slide 25/44
 <a href="slide024.html" onclick="previous_step();return false">BACK</a>
 <a href="index.html">UP</a>
 <a href="slide026.html" onclick="next_step(); return false">NEXT</a>
@@ -43,7 +51,7 @@ next page: ( shift + page down ) | previous page: ( shift + page up ) |
 index: ( arrow-up )</span>
 
 <br>
-<progress id="slide-progress" value="25" max="42"></progress>
+<progress id="slide-progress" value="25" max="44"></progress>
 </div>
 </body>
 </html>
