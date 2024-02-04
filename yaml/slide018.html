@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-store" />
-<title>Schema changes</title>
+<title>Github Workflow</title>
 <link rel="prev" href="slide017.html" />
 <link rel="next" href="slide019.html" />
 <script src="js/jquery-3.1.1.min.js"></script>
@@ -18,18 +18,27 @@
 <div id="test"></div>
 -->
 <div id="bbslides-slide" class="bbslides-frame">
-<h1 id="node_1" class="bbslides-h1">Schema changes</h1>
-<ul><li id="node_3">The YAML Schema is about deciding if something is a boolean, number, null etc. or a string</li><li id="node_4">In 1.1, there are 22 values resolved as booleans</li><li id="node_5">Many probably know the &quot;Norway Problem&quot;, e.g. &quot;no&quot; is actually the same as &quot;false&quot;</li><li id="node_6">That is simply unexpected for many people</li><li id="node_7">That has been fixed</li><li id="node_8">Sexagesimal numbers (base 60) like 190:20:30 are gone</li><li id="node_9">No underscores in numbers allowed anymore</li><li id="node_10">Binary (base 2) is gone</li></ul>
+<h1 id="node_1" class="bbslides-h1">Github Workflow</h1>
+<div id="node_2" class="codebox"><span class="plainkey">jobs</span><span class="colon">:</span><span class="eol">
+</span><span class="default">  </span><span class="plainkey">example_matrix</span><span class="colon">:</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">strategy</span><span class="colon">:</span><span class="eol">
+</span><span class="default">      </span><span class="plainkey">matrix</span><span class="colon">:</span><span class="eol">
+</span><span class="default">        </span><span class="plainkey">version</span><span class="colon">:</span><span class="default"> </span><span class="flowseq_start">[</span><span class="default">10</span><span class="flow_comma">,</span><span class="default"> </span><span class="default">12</span><span class="flow_comma">,</span><span class="default"> </span><span class="default">14</span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">steps</span><span class="colon">:</span><span class="eol">
+</span><span class="default">      </span><span class="dash">-</span><span class="default"> </span><span class="plainkey">uses</span><span class="colon">:</span><span class="default"> </span><span class="default">actions/setup-node@v3</span><span class="eol">
+</span><span class="default">        </span><span class="plainkey">with</span><span class="colon">:</span><span class="eol">
+</span><span class="default">          </span><span class="plainkey">node-version</span><span class="colon">:</span><span class="default"> </span><span class="default">${{ matrix.version }}</span><span class="eol">
+</span></div>
+<ul><li id="node_5">The ${{ ... }} is a bit nicer than Jinja as one usually does not need quotes</li><li id="node_6">Many people think ${{ ... }} is a part of YAML</li><li id="node_7">Intro on their
+<a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions" rel="nofollow">website</a>:
+&quot;Workflow files use YAML syntax, and must have either a .yml or .yaml file
+extension. If you&#39;re new to YAML and want to learn more, see &#39;Learn YAML in Y
+minutes.&#39;&quot;</li></ul>
 </div>
 <script type="text/javascript">
-register_animation('node_3', 2, 'greyin', {});
-register_animation('node_4', 3, 'greyin', {});
-register_animation('node_5', 4, 'greyin', {});
-register_animation('node_6', 5, 'greyin', {});
-register_animation('node_7', 6, 'greyin', {});
-register_animation('node_8', 7, 'greyin', {});
-register_animation('node_9', 8, 'greyin', {});
-register_animation('node_10', 9, 'greyin', {});
+register_animation('node_5', 2, 'greyin', {});
+register_animation('node_6', 3, 'greyin', {});
+register_animation('node_7', 4, 'greyin', {});
 
 var prev_page = 'slide017.html';
 var next_page = 'slide019.html';

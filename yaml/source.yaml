@@ -38,7 +38,49 @@ content: |
   [*]Invented 2001
   [*]By Oren Ben-Kiki, Clark Evans, Ingy döt Net
   [*]Ingy says Hi 😊
+  [*]Ingy is also the one still actively working on YAML and related things
+  [*]Here is a mini talk that he sent me:
   [/list]
+
+---
+title: YAMLScript
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Many people try to do programming things with YAML
+  [*]But YAML wasn't designed for that
+  [*]Ingy has been working on a new YAML based programming language
+  [*]Complete and general-purpose
+  [*]Best when embedded in plain old YAML files
+  [*]Load data from other files
+  [*]Excellent interpolation features
+  [*]Merge, filter, concatenate, etc. Any functions you can imagine
+  [*]Define your own functions
+  [*]Solves most programming things that people want to do with YAML
+  [/list]
+
+---
+title: YAMLScript
+content: |
+  [title][/title]
+  [div]
+  [codeboxsmall animation="1,appear"][include="ys-data.yaml.html"][/codeboxsmall]
+  [codebox animation="3,appear"][include="ys-example.ys.html"][/codebox]
+  [codeboxsmall animation="4,appear"][include="ys-output.txt.html"][/codeboxsmall]
+  [/div]
+
+---
+title: YAMLScript
+content: |
+  [title][/title]
+  See [url=https://yamlscript.org/]YAMLScript[/url] for more information and
+  a quick way to start playing with it
+
+---
+title: YAMLScript
+content: |
+  [title][/title]
+  </end_of_talk_in_talk>
 
 ---
 title: YAML
@@ -402,50 +444,6 @@ content: |
   [title][/title]
   [url=https://matrix.yaml.info/]YAML Test Matrix[/url][br]
   [img=yaml-matrix.png]YAML Test Matrix[/img]
-
----
-title: YAML as a programming language
-content: |
-  [title][/title]
-  [list animation="1,greyin"]
-  [*]If you think YAML should just be a simple configuration language just don't
-  pay attention to the next few slides ;-)
-  [*]Ingy created a new programming language
-  [/list]
-
----
-title: YAMLScript
-content: |
-  [title][/title]
-  [list animation="1,greyin"]
-  [*][url=https://yamlscript.org/]YAMLScript[/url] is a new functional, general-purpose programming language
-  [*]Syntax is YAML based
-  [*]Clean, expressive, mixes well with YAML data
-  [*]Execution speed is on par with Python or Ruby
-  [*]Available as a YS loader module in various programming languages
-  [*]Perl, Python, Raku, Ruby, Rust currently
-  [/list]
-
----
-title: YAMLScript
-content: |
-  [title][/title]
-  [div]
-  [codebox animation="1,appear"][include="ys-people.yaml.html"][/codebox]
-  [codebox animation="2,appear"][include="ys-places.yaml.html"][/codebox]
-  [/div]
-  [codebox animation="3,appear"][include="ys-example.ys.html"][/codebox]
-  [codebox animation="4,appear"][include="ys-output.txt.html"][/codebox]
-
----
-title: YAMLScript
-content: |
-  [title][/title]
-  The current way to quickly try it out:[br]
-  [codebox]docker run --rm -it ubuntu bash -c 'apt update \
-  && apt install -y curl make xz-utils \
-  && . <(curl -sL yamlscript.org/try-ys) && bash -i'
-  [/codebox]
 
 ---
 title: Where to find us

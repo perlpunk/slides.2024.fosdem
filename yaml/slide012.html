@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-store" />
-<title>Saltstack</title>
+<title>History</title>
 <link rel="prev" href="slide011.html" />
 <link rel="next" href="slide013.html" />
 <script src="js/jquery-3.1.1.min.js"></script>
@@ -18,35 +18,14 @@
 <div id="test"></div>
 -->
 <div id="bbslides-slide" class="bbslides-frame">
-<h1 id="node_1" class="bbslides-h1">Saltstack</h1>
-<div id="node_2" class="codebox">{% if grains['os'] != 'FreeBSD' %}
-tcsh:
-    pkg:
-        - installed
-{% endif %}
-
-motd:
-  file.managed:
-    {% if grains['os'] == 'FreeBSD' %}
-    - name: /etc/motd
-    {% elif grains['os'] == 'Debian' %}
-    - name: /etc/motd.tail
-    {% endif %}
-    - source: salt://motd
-</div>
-<ul><li id="node_5">This is an sls file. It&#39;s not even YAML</li><li id="node_6">It runs through Jinja templating first, and the result is - hopefully
-- valid YAML</li><li id="node_7">Many people think this is all part of YAML</li><li id="node_8">Intro on their
-<a href="https://docs.saltproject.io/en/latest/topics/yaml/index.html#learning-more-about-yaml" rel="nofollow">Website</a>:
-&quot;However, Salt uses a small subset of YAML that maps over very commonly used
-data structures, like lists and dictionaries. It
-is the job of the YAML renderer to take the YAML data structure and compile
-it into a Python data structure for use by Salt.&quot;</li></ul>
+<h1 id="node_1" class="bbslides-h1">History</h1>
+<ul><li id="node_3">YAML 1.1 was implemented by PyYAML and libyaml (with some divergence to the spec)</li><li id="node_4">Many other libraries ported this or use libyaml as a binding</li><li id="node_5">YAML 1.2 was not widely adopted for a long while</li><li id="node_6">libyaml and PyYAML were even used in the <a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#list-of-qualifying-repositories-for-mars-2020-helicopter-contributor-achievement" rel="nofollow">2020 NASA Mars Helicopter Mission</a>!</li></ul>
 </div>
 <script type="text/javascript">
-register_animation('node_5', 2, 'greyin', {});
-register_animation('node_6', 3, 'greyin', {});
-register_animation('node_7', 4, 'greyin', {});
-register_animation('node_8', 5, 'greyin', {});
+register_animation('node_3', 2, 'greyin', {});
+register_animation('node_4', 3, 'greyin', {});
+register_animation('node_5', 4, 'greyin', {});
+register_animation('node_6', 5, 'greyin', {});
 
 var prev_page = 'slide011.html';
 var next_page = 'slide013.html';

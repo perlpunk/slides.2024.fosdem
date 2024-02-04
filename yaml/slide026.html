@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-store" />
-<title>What else can we do?</title>
+<title>Validate!</title>
 <link rel="prev" href="slide025.html" />
 <link rel="next" href="slide027.html" />
 <script src="js/jquery-3.1.1.min.js"></script>
@@ -18,14 +18,17 @@
 <div id="test"></div>
 -->
 <div id="bbslides-slide" class="bbslides-frame">
-<h1 id="node_1" class="bbslides-h1">What else can we do?</h1>
-<ul><li id="node_3">Support libraries to implement 1.2</li><li id="node_4">Improve tooling</li><li id="node_5">Write better tutorials</li><li id="node_6">...?</li></ul>
+<h1 id="node_1" class="bbslides-h1">Validate!</h1>
+<ul><li id="node_3">If it is important to have a string or a number in a certain place in a YAML file...</li><li id="node_4">(Same actually goes for JSON - what about forgetting to quote the zip code (string!) &quot;01234&quot;?)</li><li id="node_5">then use a Schema Validator! e.g. JSON Schema</li><li id="node_6">We are using that for all our YAML files in openQA</li><li id="node_7">Also protects you from processing an unexpected data stucture with a
+recursive tree of aliases (&quot;Billion laughs attack&quot;, which is not a problem of
+YAML itself actually)</li></ul>
 </div>
 <script type="text/javascript">
 register_animation('node_3', 2, 'greyin', {});
 register_animation('node_4', 3, 'greyin', {});
 register_animation('node_5', 4, 'greyin', {});
 register_animation('node_6', 5, 'greyin', {});
+register_animation('node_7', 6, 'greyin', {});
 
 var prev_page = 'slide025.html';
 var next_page = 'slide027.html';

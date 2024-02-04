@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-store" />
-<title>YAML Version</title>
+<title>Saltstack</title>
 <link rel="prev" href="slide015.html" />
 <link rel="next" href="slide017.html" />
 <script src="js/jquery-3.1.1.min.js"></script>
@@ -18,12 +18,35 @@
 <div id="test"></div>
 -->
 <div id="bbslides-slide" class="bbslides-frame">
-<h1 id="node_1" class="bbslides-h1">YAML Version</h1>
-<h2 id="node_2" class="bbslides-h2">So what are the actual changes in YAML 1.2?</h2>
-<ul><li id="node_4">They can roughly be divided into syntax and schema changes</li></ul>
+<h1 id="node_1" class="bbslides-h1">Saltstack</h1>
+<div id="node_2" class="codebox">{% if grains['os'] != 'FreeBSD' %}
+tcsh:
+    pkg:
+        - installed
+{% endif %}
+
+motd:
+  file.managed:
+    {% if grains['os'] == 'FreeBSD' %}
+    - name: /etc/motd
+    {% elif grains['os'] == 'Debian' %}
+    - name: /etc/motd.tail
+    {% endif %}
+    - source: salt://motd
+</div>
+<ul><li id="node_5">This is an sls file. It&#39;s not even YAML</li><li id="node_6">It runs through Jinja templating first, and the result is - hopefully
+- valid YAML</li><li id="node_7">Many people think this is all part of YAML</li><li id="node_8">Intro on their
+<a href="https://docs.saltproject.io/en/latest/topics/yaml/index.html#learning-more-about-yaml" rel="nofollow">Website</a>:
+&quot;However, Salt uses a small subset of YAML that maps over very commonly used
+data structures, like lists and dictionaries. It
+is the job of the YAML renderer to take the YAML data structure and compile
+it into a Python data structure for use by Salt.&quot;</li></ul>
 </div>
 <script type="text/javascript">
-register_animation('node_4', 2, 'greyin', {});
+register_animation('node_5', 2, 'greyin', {});
+register_animation('node_6', 3, 'greyin', {});
+register_animation('node_7', 4, 'greyin', {});
+register_animation('node_8', 5, 'greyin', {});
 
 var prev_page = 'slide015.html';
 var next_page = 'slide017.html';

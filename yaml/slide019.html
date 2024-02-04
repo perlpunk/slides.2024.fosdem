@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="no-store" />
-<title>YAML Schema differences</title>
+<title>YAML Version</title>
 <link rel="prev" href="slide018.html" />
 <link rel="next" href="slide020.html" />
 <script src="js/jquery-3.1.1.min.js"></script>
@@ -18,11 +18,18 @@
 <div id="test"></div>
 -->
 <div id="bbslides-slide" class="bbslides-frame">
-<h1 id="node_1" class="bbslides-h1">YAML Schema differences</h1>
-<a href="https://perlpunk.github.io/yaml-test-schema/schemas.html" rel="nofollow">Schema differences</a><br>
-<img src="data/yaml-schemas.png" alt="[YAML Schemas]" title="YAML Schemas">
+<h1 id="node_1" class="bbslides-h1">YAML Version</h1>
+<ul><li id="node_3">None of them is actually stating which version of YAML is used.</li><li id="node_4">(I did some tests for GitHub workflows. It&#39;s apparently implementing the
+YAML 1.2 Core Schema)</li><li id="node_5"><a href="https://learnxinyminutes.com/docs/yaml/" rel="nofollow">Learn YAML in Y minutes</a>
+is mentioned once, but that page is not saying anything about versions
+either.</li><li id="node_7">It&#39;s documenting YAML 1.1. I haven&#39;t had time to make a PR yet which
+would add YAML 1.2</li></ul>
 </div>
 <script type="text/javascript">
+register_animation('node_3', 2, 'greyin', {});
+register_animation('node_4', 3, 'greyin', {});
+register_animation('node_5', 4, 'greyin', {});
+register_animation('node_7', 5, 'greyin', {});
 
 var prev_page = 'slide018.html';
 var next_page = 'slide020.html';
