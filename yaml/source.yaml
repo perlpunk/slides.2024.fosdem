@@ -27,7 +27,9 @@ content: |
   [*]Introduction
   [*]History
   [*]YAML Usage
-  [*]More History
+  [*]YAML Versions
+  [*]New libraries
+  [*]YAML Test Infrastructure
   [/list]
 
 ---
@@ -131,6 +133,8 @@ content: |
   [*]YAML 1.1 was implemented by PyYAML and libyaml (with some divergence to the spec)
   [*]Many other libraries ported this or use libyaml as a binding
   [*]YAML 1.2 was not widely adopted for a long while
+  [*]There is a PR for adding YAML 1.2 Core Schema support for PyYAML, but for
+  unrelated reasons it can't be merged yet
   [*]libyaml and PyYAML were even used in the [url=https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#list-of-qualifying-repositories-for-mars-2020-helicopter-contributor-achievement]2020 NASA Mars Helicopter Mission[/url]!
   [/list]
 
@@ -292,7 +296,7 @@ title: Validate!
 content: |
   [title][/title]
   [list animation="1,greyin"]
-  [*]If it is important to have a string or a number in a certain place in a YAML file...
+  [*]If it is important to have a certain type in a certain place in a YAML file...
   [*](Same actually goes for JSON - what about forgetting to quote the zip code (string!) "01234"?)
   [*]then use a Schema Validator! e.g. JSON Schema
   [*]We are using that for all our YAML files in openQA
@@ -445,13 +449,14 @@ content: |
   [url=https://matrix.yaml.info/]YAML Test Matrix[/url][br]
   [img=yaml-matrix.png]YAML Test Matrix[/img]
 
+
 ---
 title: Where to find us
 content: |
   [title][/title]
   [list animation="1,greyin"]
   [*][url=https://yaml.org/]yaml.org[/url]
-  [*]On matrix: [url=https://matrix.to/#/#chat:yaml.io][/url] (note that there
+  [*]On matrix: [url=https://matrix.to/#/#chat:yaml.io]#chat:yaml.io[/url] (note that there
   is a server move planned in the near future so there might be a downtime
   [*]On IRC: [url=https://web.libera.chat/?channels#yaml]libera.chat#yaml[/url]
   [/list]
