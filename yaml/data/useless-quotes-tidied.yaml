@@ -1,0 +1,8 @@
+---
+- This does not need quotes
+- 3.1.4
+- '.1'
+# unsure because of the stars?
+- origin/**
+- are { problematic in here?
+- [ 'and { what about here?']

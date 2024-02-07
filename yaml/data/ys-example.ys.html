@@ -1,0 +1,19 @@
+<span class="eol"># generator.ys
+</span><span class="tag">!yamlscript/v0</span><span class="eol">
+</span><span class="eol">
+</span><span class="plainkey">data =</span><span class="colon">:</span><span class="default"> </span><span class="default">load(&quot;some.yaml&quot;)</span><span class="eol">
+</span><span class="plainkey">people =</span><span class="colon">:</span><span class="default"> </span><span class="default">data.people</span><span class="eol">
+</span><span class="plainkey">places =</span><span class="colon">:</span><span class="default"> </span><span class="default">data.places</span><span class="eol">
+</span><span class="eol">
+</span><span class="plainkey">defn other(max, person, place):</span><span class="colon">:</span><span class="eol">
+</span><span class="default">  </span><span class="plainkey">string:</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">$person likes $place.</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="plainkey">number:</span><span class="colon">:</span><span class="default"> </span><span class="default">int(rand(max)) + 1</span><span class="eol">
+</span><span class="eol">
+</span><span class="plainkey">take (ARGV.0 || 5)</span><span class="colon">:</span><span class="eol">
+</span><span class="default">  </span><span class="plainkey">shuffle</span><span class="colon">:</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">for [person people, place places]</span><span class="colon">:</span><span class="eol">
+</span><span class="default">      </span><span class="plainkey">merge</span><span class="colon">:</span><span class="eol">
+</span><span class="default">        </span><span class="plainkey">=&gt;:</span><span class="colon">:</span><span class="eol">
+</span><span class="default">          </span><span class="plainkey">person:</span><span class="colon">:</span><span class="default"> </span><span class="default">person</span><span class="eol">
+</span><span class="default">          </span><span class="plainkey">place:</span><span class="colon">:</span><span class="default">  </span><span class="default">place</span><span class="eol">
+</span>

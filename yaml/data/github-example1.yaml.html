@@ -1,0 +1,10 @@
+<span class="plainkey">jobs</span><span class="colon">:</span><span class="eol">
+</span><span class="default">  </span><span class="plainkey">example_matrix</span><span class="colon">:</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">strategy</span><span class="colon">:</span><span class="eol">
+</span><span class="default">      </span><span class="plainkey">matrix</span><span class="colon">:</span><span class="eol">
+</span><span class="default">        </span><span class="plainkey">version</span><span class="colon">:</span><span class="default"> </span><span class="flowseq_start">[</span><span class="default">10</span><span class="flow_comma">,</span><span class="default"> </span><span class="default">12</span><span class="flow_comma">,</span><span class="default"> </span><span class="default">14</span><span class="flowseq_end">]</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">steps</span><span class="colon">:</span><span class="eol">
+</span><span class="default">      </span><span class="dash">-</span><span class="default"> </span><span class="plainkey">uses</span><span class="colon">:</span><span class="default"> </span><span class="default">actions/setup-node@v3</span><span class="eol">
+</span><span class="default">        </span><span class="plainkey">with</span><span class="colon">:</span><span class="eol">
+</span><span class="default">          </span><span class="plainkey">node-version</span><span class="colon">:</span><span class="default"> </span><span class="default">${{ matrix.version }}</span><span class="eol">
+</span>

@@ -1,0 +1,7 @@
+--- # Configuration
+v: v0.1
+indentation: { spaces: 2 }
+header: true
+trailing-spaces: fix
+scalar-style:
+  default: plain # <----

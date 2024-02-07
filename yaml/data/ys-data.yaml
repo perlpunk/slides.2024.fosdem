@@ -1,0 +1,14 @@
+# some.yaml
+people:
+- Ingy
+- Tina
+- Panto
+- Eemeli
+- Thom
+
+places:
+- Seattle
+- Berlin
+- Athens
+- Helsinki
+- Buffalo

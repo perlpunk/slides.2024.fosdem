@@ -1,0 +1,11 @@
+<span class="dash">-</span><span class="default"> </span><span class="plainkey">name</span><span class="colon">:</span><span class="eol"> # Touch files with an optional mode
+</span><span class="default">  </span><span class="plainkey">ansible.builtin.file</span><span class="colon">:</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">dest</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">{{ item.path }}</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">state</span><span class="colon">:</span><span class="default"> </span><span class="default">touch</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">mode</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">{{ item.mode | default(omit) }}</span><span class="doublequote">&quot;</span><span class="eol">
+</span><span class="default">  </span><span class="plainkey">loop</span><span class="colon">:</span><span class="eol">
+</span><span class="default">  </span><span class="dash">-</span><span class="default"> </span><span class="plainkey">path</span><span class="colon">:</span><span class="default"> </span><span class="default">/tmp/foo</span><span class="eol">
+</span><span class="default">  </span><span class="dash">-</span><span class="default"> </span><span class="plainkey">path</span><span class="colon">:</span><span class="default"> </span><span class="default">/tmp/bar</span><span class="eol">
+</span><span class="default">  </span><span class="dash">-</span><span class="default"> </span><span class="plainkey">path</span><span class="colon">:</span><span class="default"> </span><span class="default">/tmp/baz</span><span class="eol">
+</span><span class="default">    </span><span class="plainkey">mode</span><span class="colon">:</span><span class="default"> </span><span class="doublequote">&quot;</span><span class="doublequoted">0444</span><span class="doublequote">&quot;</span><span class="eol">
+</span>

@@ -1,0 +1,471 @@
+---
+title: Do you know YAML?
+content: |
+  [title][/title]
+  [h2]How well do you know YAML?[/h2]
+  [list]
+  [*]Where: FOSDEM, Brussels
+  [*]When: February 4 2024
+  [*]Who: Tina Müller
+  [/list]
+
+---
+title: About me
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Addicted to Perl since 1998
+  [*]Addicted to YAML since 2017
+  [*]Engineer at SUSE Software Solutions [img=suse_logo_small.png]SUSE[/img] since 2019
+  [/list]
+
+---
+title: Topics
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Introduction
+  [*]History
+  [*]YAML Usage
+  [*]YAML Versions
+  [*]New libraries
+  [*]YAML Test Infrastructure
+  [/list]
+
+---
+title: YAML
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Invented 2001
+  [*]By Oren Ben-Kiki, Clark Evans, Ingy döt Net
+  [*]Ingy says Hi 😊
+  [*]Ingy is also the one still actively working on YAML and related things
+  [*]Here is a mini talk that he sent me:
+  [/list]
+
+---
+title: YAMLScript
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Many people try to do programming things with YAML
+  [*]But YAML wasn't designed for that
+  [*]Ingy has been working on a new YAML based programming language
+  [*]Complete and general-purpose
+  [*]Best when embedded in plain old YAML files
+  [*]Load data from other files
+  [*]Excellent interpolation features
+  [*]Merge, filter, concatenate, etc. Any functions you can imagine
+  [*]Define your own functions
+  [*]Solves most programming things that people want to do with YAML
+  [/list]
+
+---
+title: YAMLScript
+content: |
+  [title][/title]
+  [div]
+  [codeboxsmall animation="1,appear"][include="ys-data.yaml.html"][/codeboxsmall]
+  [codebox animation="3,appear"][include="ys-example.ys.html"][/codebox]
+  [codeboxsmall animation="4,appear"][include="ys-output.txt.html"][/codeboxsmall]
+  [/div]
+
+---
+title: YAMLScript
+content: |
+  [title][/title]
+  See [url=https://yamlscript.org/]YAMLScript[/url] for more information and
+  a quick way to start playing with it
+
+---
+title: YAMLScript
+content: |
+  [title][/title]
+  </end_of_talk_in_talk>
+
+---
+title: YAML
+content: |
+  [title][/title]
+  [size=120]
+  [br]
+  [span animation="1,appear"]Yet[/span]
+  [span animation="2,appear"]Another[/span]
+  [span animation="3,appear"]^W[/span]
+  [span animation="4,appear"]^W[/span]
+  [/size]
+
+---
+title: YAML
+content: |
+  [title][/title]
+  [size=120]
+  [br]
+  [span animation="1,appear"]YAML[/span]
+  [span animation="2,appear"]Ain't[/span]
+  [span animation="3,appear"]Markup[/span]
+  [span animation="4,appear"]Language[/span]
+  [/size]
+
+---
+title: Introduction
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*][url=http://yaml.org/]YAML[/url] is a data serialization language
+  [*]Superset of JSON
+  [*]Block style and Flow style
+  [*]Many ways to write a string
+  [*]Aliases (like References or Pointers)
+  [*]Comments
+  [*]Allowed comma after the last item!
+  [*]Multiple documents in one file or stream
+  [*]Powerful tags for loading objects or customized data/callbacks
+  [*][url=https://www.yaml.info/]Learn more on www.yaml.info[/url]
+  [/list]
+
+---
+title: History
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]YAML 1.1 was implemented by PyYAML and libyaml (with some divergence to the spec)
+  [*]Many other libraries ported this or use libyaml as a binding
+  [*]YAML 1.2 was not widely adopted for a long while
+  [*]There is a PR for adding YAML 1.2 Core Schema support for PyYAML, but for
+  unrelated reasons it can't be merged yet
+  [*]libyaml and PyYAML were even used in the [url=https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#list-of-qualifying-repositories-for-mars-2020-helicopter-contributor-achievement]2020 NASA Mars Helicopter Mission[/url]!
+  [/list]
+
+---
+title: History
+content: |
+  [title][/title]
+  [img=code-on-two-planets.jpg]My code runs on two planets!![/img]
+
+---
+title: More History
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]As mentioned, 1.1 implementations were widely adopted
+  [*]There was no clear changelog for 1.2
+  [*]There hadn't been a test suite until 2016
+  [*]So before 2016 updating a libary to 1.2 would basically mean to almost
+  write it from scratch from the spec
+  [/list]
+
+---
+title: Learning and Using YAML
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]How do people get in touch with YAML?
+  [*]Usually by using an application that uses YAML...
+  [*]... or some "kind of" YAML
+  [*]Starting with examples from their documentation
+  [/list]
+
+---
+title: Saltstack
+content: |
+  [title][/title]
+  [codebox][include="salt-example1.sls"][/codebox]
+  [list animation="1,greyin"]
+  [*]This is an sls file. It's not even YAML
+  [*]It runs through Jinja templating first, and the result is - hopefully
+  - valid YAML
+  [*]Many people think this is all part of YAML
+  [*]Intro on their
+  [url=https://docs.saltproject.io/en/latest/topics/yaml/index.html#learning-more-about-yaml]Website[/url]:
+  "However, Salt uses a small subset of YAML that maps over very commonly used
+  data structures, like lists and dictionaries. It
+  is the job of the YAML renderer to take the YAML data structure and compile
+  it into a Python data structure for use by Salt."
+  [/list]
+
+
+---
+title: Ansible
+content: |
+  [title][/title]
+  [codebox][include="ansible-example1.yaml.html"][/codebox]
+  [list animation="1,greyin"]
+  [*]It also uses Jinja templates
+  [*]They are processed [i]after[/i] loading the YAML
+  [*]Many people think {{ ... }} is a part of YAML
+  [*]Intro on their
+  [url=https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html]website[/url]:
+  "This page provides a basic overview of correct YAML syntax, which is how
+  Ansible playbooks (our configuration management language) are expressed."
+  [/list]
+
+---
+title: Github Workflow
+content: |
+  [title][/title]
+  [codebox][include="github-example1.yaml.html"][/codebox]
+  [list animation="1,greyin"]
+  [*]The ${{ ... }} is a bit nicer than Jinja as one usually does not need quotes
+  [*]Many people think ${{ ... }} is a part of YAML
+  [*]Intro on their
+  [url=https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions]website[/url]:
+  "Workflow files use YAML syntax, and must have either a .yml or .yaml file
+  extension. If you're new to YAML and want to learn more, see 'Learn YAML in Y
+  minutes.'"
+  [/list]
+
+---
+title: YAML Version
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]None of them is actually stating which version of YAML is used.
+  [*](I did some tests for GitHub workflows. It's apparently implementing the
+  YAML 1.2 Core Schema)
+  [*][url=https://learnxinyminutes.com/docs/yaml/]Learn YAML in Y minutes[/url]
+  is mentioned once, but that page is not saying anything about versions
+  either.
+  [*]It's documenting YAML 1.1. I haven't had time to make a PR yet which
+  would add YAML 1.2
+  [/list]
+
+---
+title: YAML Version
+content: |
+  [title][/title]
+  [h2]So what are the actual changes in YAML 1.2?[/h2]
+  [list animation="1,greyin"]
+  [*]They can roughly be divided into syntax and schema changes
+  [/list]
+
+---
+title: Syntax changes
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]The syntax changes are likely not affecting many people
+  [*]There are a few backwards incompatible changes, affecting even less people
+  [/list]
+
+---
+title: Schema changes
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]The YAML Schema is about deciding if something is a boolean, number, null etc. or a string
+  [*]In 1.1, there are 22 values resolved as booleans
+  [*]Many probably know the "Norway Problem", e.g. "no" is actually the same as "false"
+  [*]That is simply unexpected for many people
+  [*]That has been fixed
+  [*]Sexagesimal numbers (base 60) like 190:20:30 are gone
+  [*]No underscores in numbers allowed anymore
+  [*]Binary (base 2) is gone
+  [/list]
+
+---
+title: YAML Schema differences
+content: |
+  [title][/title]
+  [url=https://perlpunk.github.io/yaml-test-schema/schemas.html]Schema differences[/url][br]
+  [img=yaml-schemas.png]YAML Schemas[/img]
+
+---
+title: But...
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Of course there can still be questions like this:
+  [/list]
+  [codebox animation="10,appear"][include="resolving1.yaml.html"][/codebox]
+
+---
+title: To Quote or not to Quote
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Not having to quote strings is a feature
+  [*]Many actually like that feature
+  [*]You can't have both
+  [*]So, what to do?
+  [/list]
+
+---
+title: Validate!
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]If it is important to have a certain type in a certain place in a YAML file...
+  [*](Same actually goes for JSON - what about forgetting to quote the zip code (string!) "01234"?)
+  [*]then use a Schema Validator! e.g. JSON Schema
+  [*]We are using that for all our YAML files in openQA
+  [*]Also protects you from processing an unexpected data stucture with a
+  recursive tree of aliases ("Billion laughs attack", which is not a problem of
+  YAML itself actually)
+  [/list]
+
+---
+title: Use the right tools!
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]If you are unsure, quote it. It doesn't hurt.
+  [*]Use a linter, e.g. [url=https://yamllint.readthedocs.io/en/stable/]yamllint[/url], that tells you you have unnecessary quotes
+  [*]Use a tool that automatically removes useless quotes before committing, e.g. [url=https://perlpunk.github.io/yamltidy/]yamltidy[/url]
+  [*]You are using formatters for other languages as well, right?
+  [/list]
+
+---
+title: yamltidy
+content: |
+  [title][/title]
+  I started [url=https://perlpunk.github.io/yamltidy/]yamltidy[/url] four years ago[br]
+  [codebox][include="yamltidy.yaml.html"][/codebox]
+  [div]
+  [codebox animation="1,appear"][include="useless-quotes.yaml.html"][/codebox]
+  [codebox animation="2,appear"][include="useless-quotes-tidied.yaml.html"][/codebox]
+  [/div]
+
+
+---
+title: yamllint & yamltidy
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Short note about yamllint and yamltidy and quoting scalars
+  [*]yamllint currently only supports YAML 1.1
+  [*]yamltidy is pretty new and so far only supports the 1.2 Core Schema
+  [*]Adrien, the yamllint author, wants to add 1.2 support soon
+  [*]And I want to add 1.1 support of course
+  [/list]
+
+---
+title: What else can we do?
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]Support libraries to implement 1.2
+  [*]Improve tooling
+  [*]Write better tutorials
+  [*]...?
+  [/list]
+
+
+---
+title: YAML Test Suite
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]The [url=https://github.com/yaml/yaml-test-suite]YAML Test Suite[/url] was
+  started by Ingy in 2016
+  [*]Felix "flyx" Krause added a lot of test cases when he implemented NimYAML
+  [*]In 2017 I started YAML::PP (perl) and also added a lot of test cases
+  [*]12 libraries are in the list of official users
+  [*]402 test cases
+  [/list]
+
+---
+title: New libraries
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]And the test suite was already helping to get more 1.2 libraries
+  [*]Specifically I'd like to mention the following:
+  [/list]
+
+---
+title: libfyaml
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*][url=https://github.com/pantoniou/libfyaml]C libfyaml[/url] by Pantelis "panto" Antoniou
+  [*]It can replace libyaml
+  [*]It passes all tests
+  [*]It's fast
+  [*]It's actively developed
+  [*]It can roundtrip YAML comments (but experimental I think)
+  [*]Bindings to several languages are planned
+  [/list]
+
+---
+title: Javascript yaml
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*][url=https://github.com/eemeli/yaml]Javascript yaml[/url] by Eemeli Aro
+  [*]It passes all tests (I think)
+  [*]It's actively developed
+  [*]It can roundtrip YAML with comments and blank lines
+  [*]It supports the YAML 1.2 Core schema, 1.1 and optional things like the << merge key
+  [/list]
+
+---
+title: Perl YAML::PP
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*][url=https://github.com/perlpunk/YAML-PP-p5]Perl YAML::PP[/url] by me ;-)
+  [*]It passes most of the tests with the exception of implicit mapping keys
+  that are not strings
+  [*]It supports the YAML 1.2 Core schema, 1.1 and optional things like the << merge key
+  [*]Comes with a script to output YAML with ANSI colors
+  [/list]
+
+---
+title: YAML Containers
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]In 2017, Ingy started the YAML Editor
+  [*]A tool to play with various YAML libraries in a container and see their output
+  [*]A new alterntive to that is the [url=https://play.yaml.io/main/parser]YAML Playground[/url]
+  [*]It makes it easier to share YAML snippets
+  [*]It requires to run a local docker/podman container
+  [/list]
+
+---
+title: YAML Playground
+content: |
+  [title][/title]
+  [url=https://play.yaml.io/main/parser?input=IyBFZGl0IE1lIQotLS0KSGVsbG86IEZPU0RFTSE=]YAML
+  Playground[/url][br]
+  [img=yaml-playground.png]YAML Playground[/img]
+
+---
+title: YAML Test Matrix
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*]So we had a list of test cases...
+  [*]and a list of libraries in a container, ready to output in our test format
+  [*]So I created the [url=https://matrix.yaml.info/]YAML Test Matrix[/url]
+  [/list]
+
+---
+title: YAML Test Matrix
+content: |
+  [title][/title]
+  [url=https://matrix.yaml.info/]YAML Test Matrix[/url][br]
+  [img=yaml-matrix.png]YAML Test Matrix[/img]
+
+
+---
+title: Where to find us
+content: |
+  [title][/title]
+  [list animation="1,greyin"]
+  [*][url=https://yaml.org/]yaml.org[/url]
+  [*]On matrix: [url=https://matrix.to/#/#chat:yaml.io]#chat:yaml.io[/url] (note that there
+  is a server move planned in the near future so there might be a downtime
+  [*]On IRC: [url=https://web.libera.chat/?channels#yaml]libera.chat#yaml[/url]
+  [/list]
+
+
+
+---
+title: Thanks
+content: |
+  [size=80][br]Thanks![br]
+  [color=green]🙂[/color][/size]
+
